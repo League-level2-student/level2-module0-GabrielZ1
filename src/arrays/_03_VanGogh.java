@@ -60,9 +60,9 @@ public class _03_VanGogh extends PApplet {
 
 	void initializePaintings() {
 		currentIndex = 0;
-		paintings = new PImage[4];
-		
-		for(int i = 0; i<4; i++) {
+		paintings = new PImage[5];
+
+		for(int i = 0; i<5; i++) {
 			paintings[i] = new PImage();
 		}
 
@@ -70,13 +70,20 @@ public class _03_VanGogh extends PApplet {
 		paintings[1] = loadImage("strawHatPortrait.jpg");
 		paintings[2] = loadImage("wheatField.jpg");
 		paintings[3] = loadImage("painterOnRoad.jpg");
+		paintings[4] = loadImage("cafeterrace.jpeg");
 
 		brush.setNewPainting(paintings[currentIndex]);
-	
-		
+
 	}
 
 	void selectNextPainting() {
+		if(currentIndex < 4) {
+			currentIndex += 1;
+		}
+		else {
+			currentIndex = 0;	
+		}
+		brush.setNewPainting(paintings[currentIndex]);
 		
 	}
 
